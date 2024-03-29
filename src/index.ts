@@ -1,1 +1,2 @@
-type Test = "Test";
+// main entry point
+export * from "./types/number";
