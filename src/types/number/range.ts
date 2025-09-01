@@ -7,11 +7,10 @@
  * 
  * @example
  * // `NumberToUnion<3>`의 결과는 `0 | 1 | 2` 유형
- * type Code = NumberToUnion<3>;
- *
+ * type Code = NumberToUnion<3>
  */
 export type NumberToUnion<N extends number, A extends number[] = []> =
-  N extends A["length"] ? A[number] : NumberToUnion<N, [...A, A["length"]]>;
+  N extends A["length"] ? A[number] : NumberToUnion<N, [...A, A["length"]]>
 
 
 /**
@@ -24,4 +23,4 @@ export type NumberToUnion<N extends number, A extends number[] = []> =
  * // `NumberRange<0, 5>`의 결과는 `0 | 1 | 2 | 3 | 4 | 5`
  */
 export type NumberRange<S extends number, E extends number> =
-  Exclude<NumberToUnion<E>, NumberToUnion<S>> | E;
+  Exclude<NumberToUnion<E>, NumberToUnion<S>> | E
